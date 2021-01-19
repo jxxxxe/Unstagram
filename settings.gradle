@@ -1,0 +1,4 @@
+rootProject.name = 'unstagram'
+include 'unstagram-domain'
+include 'unstagram-customer-api'
+
