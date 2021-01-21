@@ -11,13 +11,15 @@ configurations {
     compileOnly {
         extendsFrom annotationProcessor
     }
-}
 
+}
 repositories {
     mavenCentral()
 }
 
 dependencies {
+    implementation project(':unstagram-common')
+
     implementation 'org.springframework.boot:spring-boot-starter-validation'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
@@ -35,8 +37,18 @@ dependencies {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
     }
     testCompile ('org.junit.jupiter:junit-jupiter:5.6.0')
+
 }
+
 
 test {
     useJUnitPlatform()
+}
+
+jar {
+    enabled=true
+}
+
+bootJar{
+    enabled=false
 }
